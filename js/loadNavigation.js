@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       <nav class="courseCointainer">
         <div class="logo"><img src="" alt="" /></div>
         <div class="auth-buttons">
-          <a href="">Sign up</a>
+          <a class="signUp" href="">Sign up</a>
           <button>Login</button>
         </div>
       </nav>
