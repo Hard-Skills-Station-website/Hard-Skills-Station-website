@@ -1,16 +1,4 @@
 /* styles.css */
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-p {
-  font-size: 1rem; /* Was 16px */
-  color: black;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -26,9 +14,16 @@ a {
 }
 
 .auth-buttons button {
-  color: #0066ff;
+  background-color: #0066ff;
+  color: white;
   text-decoration: none;
   margin: 0 10px;
+  width: 5.1875rem;
+  height: 2.125rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .main-header {
@@ -36,7 +31,7 @@ a {
   text-align: center;
   padding: 50px 20px;
   font-family: "Arial", sans-serif;
-  background: url("/test.png") no-repeat center; /* This would be the wavy background image */
+  background: url("/hero25.png") no-repeat center; /* This would be the wavy background image */
   background-size: cover;
   min-height: 40vh;
 }
@@ -90,6 +85,10 @@ a {
   background-color: transparent;
   color: black;
   border: 2px solid black;
+}
+
+i {
+  font-size: 2rem;
 }
 
 .reasons {
