@@ -3,7 +3,6 @@
   color: white;
   text-align: center;
   padding: 50px 20px;
-  font-family: "Arial", sans-serif;
   background: url("/hero25.png") no-repeat center; /* This would be the wavy background image */
   background-size: cover;
   min-height: 40vh;
@@ -107,7 +106,7 @@
 .main-content {
   max-width: 40%; /* More flexible for smaller screens */
   margin: 0 auto;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: justify;
 }
 
