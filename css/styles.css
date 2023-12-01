@@ -64,75 +64,73 @@ a {
 }
 
 .span-gradient1 {
-    font-weight: 600;
-    background: -webkit-linear-gradient(
-      left,
-      #1458d2,
-      #2581ba
-    ); /* For Safari 5.1 to 6.0 */
-    background: linear-gradient(
-      to right,
-      #2581ba,
-      #1458d2
-    ); /* Standard syntax; adjust your colors as needed */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; /* This makes the text take the color of the background */
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #1458d2,
+    #2581ba
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #2581ba,
+    #1458d2
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
 }
 
-  .span-gradient2 {
-    font-weight: 600;
-    background: -webkit-linear-gradient(
-      left,
-      #33a3ab,
-      #349daf
-    ); /* For Safari 5.1 to 6.0 */
-    background: linear-gradient(
-      to right,
-      #349daf,
-      #33a3ab
-    ); /* Standard syntax; adjust your colors as needed */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; /* This makes the text take the color of the background */
+.span-gradient2 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #33a3ab,
+    #349daf
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #349daf,
+    #33a3ab
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
 }
-  
 
-  .span-gradient3 {
-    font-weight: 600;
-    background: -webkit-linear-gradient(
-      left,
-      #257ccc,
-      #2a61ed
-    ); /* For Safari 5.1 to 6.0 */
-    background: linear-gradient(
-      to right,
-      #2a61ed,
-      #257ccc
-    ); /* Standard syntax; adjust your colors as needed */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; /* This makes the text take the color of the background */
+.span-gradient3 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #257ccc,
+    #2a61ed
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #2a61ed,
+    #257ccc
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
 }
-  
 
-  .span-gradient4 {
-    font-weight: 600;
-    background: -webkit-linear-gradient(
-      left,
-      #3cba97,
-      #35aba6
-    ); /* For Safari 5.1 to 6.0 */
-    background: linear-gradient(
-      to right,
-      #35aba6,
-      #3cba97
-    ); /* Standard syntax; adjust your colors as needed */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent; /* This makes the text take the color of the background */
+.span-gradient4 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #3cba97,
+    #35aba6
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #35aba6,
+    #3cba97
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
 }
-  
+
 .main-content {
   max-width: 40%; /* More flexible for smaller screens */
   margin: 0 auto;
