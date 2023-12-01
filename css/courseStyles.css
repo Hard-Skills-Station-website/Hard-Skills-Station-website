@@ -1,0 +1,25 @@
+
+.courseInfo {
+    display: flex;
+    flex-direction: row;
+  }
+  .courseInfo > i {
+    font-size: 1.3rem;
+    margin: 0 1rem 1rem 0;
+  }
+  .courseInfo > p {
+    margin: 0;
+    color: red;
+  }
+  #courseWrapper {
+    padding: 0 15rem;
+  }
+  #courseHeroContainer {
+    min-height: 30vh;
+    text-align: center;
+  }
+  #courseHero {
+    height: 50vh;
+    width: 100%;
+  }
+  

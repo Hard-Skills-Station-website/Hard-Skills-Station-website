@@ -9,25 +9,31 @@
     crossorigin="anonymous"
   ></script>
   <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/courseStyles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <script src="/js/loadNavigation.js"></script>
 </head>
 <body>
-    <header></header>
+    <header><div id="nav-placeholder"></div></header>
     <main>
     <div id="courseHeroContainer" ><img id="courseHero" src="/hero75.png" alt=""></div>
-    <section id="courseContainer">
-    <h1>Course Title</h1>
-    <div class="courseInfo">
-        <i class="fa-regular fa-calendar-days"></i>
-        <p>12.12.2012. 15:45</p>
-    </div>
-    <div class="courseInfo">
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Kolding</p>
-    </div>
-    <p>Discover the essentials of Python programming in a 5-hour workshop led by expert Jens Jensen. This immersive session covers Python basics, including syntax, data types, variables, loops, and functions. Through hands-on exercises, participants gain practical experience in writing and executing Python code. Jensen's interactive teaching style ensures an engaging learning experience for beginners and those seeking a refresher. By the workshop's end, attendees will possess a solid understanding of Python's core concepts, empowering them to confidently navigate further in their programming journey.</p>
+    <section id="courseWrapper">
+        <h1>Course Title</h1>
+        <div class="courseInfo">
+            <i class="fa-regular fa-calendar-days"></i>
+            <p>12.12.2012. 15:45</p>
+        </div>
+        <div class="courseInfo">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Kolding</p>
+        </div>
+        <p id="courseDescription">Discover the essentials of Python programming in a 5-hour workshop led by expert Jens Jensen. This immersive session covers Python basics, including syntax, data types, variables, loops, and functions. Through hands-on exercises, participants gain practical experience in writing and executing Python code. Jensen's interactive teaching style ensures an engaging learning experience for beginners and those seeking a refresher. By the workshop's end, attendees will possess a solid understanding of Python's core concepts, empowering them to confidently navigate further in their programming journey.</p>
+       <div class="cta-buttons">
         <button class="cta-1">Sign up to event</button>
         <button class="cta-2">See all events</button>
+        </div>
     </section>
     </main> 
     <footer></footer>
