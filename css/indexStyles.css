@@ -106,7 +106,7 @@
 .main-content {
   max-width: 40%; /* More flexible for smaller screens */
   margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: justify;
 }
 
@@ -117,7 +117,6 @@
   border-radius: 0.5rem;
   width: 11.5rem; /* Was 184px */
   height: 3.1875rem; /* Was 51px */
-  font-size: 1rem;
 }
 
 .cta-1 {
