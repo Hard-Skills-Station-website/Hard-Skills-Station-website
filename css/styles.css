@@ -38,7 +38,7 @@ a {
   font-family: "Arial", sans-serif;
   background: url("/test.png") no-repeat center; /* This would be the wavy background image */
   background-size: cover;
-  height: 40vh;
+  min-height: 40vh;
 }
 
 .text-black {
