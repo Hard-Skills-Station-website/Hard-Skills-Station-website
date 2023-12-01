@@ -39,22 +39,24 @@ a {
 .text-black {
   display: block;
   color: black;
-  font-size: 3rem; /* Was 48px */
-  font-weight: bold;
+  font-size: 6.5rem; /* Was 48px */
+  font-weight: 600;
 }
 
 .text-gradient {
-  font-size: 3rem; /* Was 48px */
-  font-weight: bold;
+  font-size: 6.5rem; /* Was 48px */
+  font weight: 600;
   background: -webkit-linear-gradient(
     left,
-    #007bff,
-    #0044ff
+    #0026ef,
+    #3dbc96,
+    #1753ec
   ); /* For Safari 5.1 to 6.0 */
   background: linear-gradient(
     to right,
-    #007bff,
-    #0044ff
+    #1753ec,
+    #3dbc96,
+    #0026ef
   ); /* Standard syntax; adjust your colors as needed */
   -webkit-background-clip: text;
   background-clip: text;
@@ -62,17 +64,19 @@ a {
 }
 
 .main-content {
-  max-width: 90%; /* More flexible for smaller screens */
+  max-width: 50%; /* More flexible for smaller screens */
   margin: 0 auto;
+  font-size: 1.3rem;
 }
 
 .cta-buttons button {
   padding: 0.625rem;
-  margin: 10% 2.5rem; /* Adjusted for better responsiveness */
+  margin: 5% 2.5rem; /* Adjusted for better responsiveness */
   cursor: pointer;
   border-radius: 0.5rem;
   width: 11.5rem; /* Was 184px */
   height: 3.1875rem; /* Was 51px */
+  font-size: 1rem;
 }
 
 .cta-1 {
@@ -95,7 +99,7 @@ i {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: transparent;
 }
 
 .reason {
@@ -123,9 +127,9 @@ footer {
 }
 
 /* Media Queries for responsive adjustments */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .reason {
-    width: 30%; /* Three columns on larger screens */
+    width: 50%; /* Three columns on larger screens */
   }
 
   .main-content {
