@@ -1,31 +1,4 @@
 /* styles.css */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.625rem 1.25rem; /* Was 10px 20px */
-  background-color: transparent;
-  color: #fff;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-
-.auth-buttons button {
-  background-color: #0066ff;
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  width: 5.1875rem;
-  height: 2.125rem;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
 .main-header {
   color: white;
   text-align: center;
