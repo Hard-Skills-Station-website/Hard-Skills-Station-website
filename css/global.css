@@ -9,3 +9,7 @@ p {
   font-size: 1rem; /* Was 16px */
   color: black;
 }
+
+i {
+  color: #0066ff;
+}
