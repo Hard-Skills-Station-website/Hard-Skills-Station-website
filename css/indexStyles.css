@@ -104,7 +104,7 @@
 }
 
 .main-content {
-  max-width: 40%; /* More flexible for smaller screens */
+  max-width: 50rem; /* More flexible for smaller screens */
   margin: 0 auto;
   font-size: 1.4rem;
   text-align: justify;
