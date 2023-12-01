@@ -7,7 +7,7 @@ body {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem; /* Was 16px */
   color: black;
 }
 
@@ -15,7 +15,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* Was 10px 20px */
   background-color: transparent;
   color: #fff;
 }
@@ -36,20 +36,20 @@ a {
   text-align: center;
   padding: 50px 20px;
   font-family: "Arial", sans-serif;
-  background: url("test.png") no-repeat center center fixed; /* This would be the wavy background image */
-  background-size: contain;
+  background: url("/test.png") no-repeat center; /* This would be the wavy background image */
+  background-size: cover;
   height: 40vh;
 }
 
 .text-black {
   display: block;
   color: black;
-  font-size: 48px; /* Adjust size as needed */
+  font-size: 3rem; /* Was 48px */
   font-weight: bold;
 }
 
 .text-gradient {
-  font-size: 48px; /* Adjust size as needed */
+  font-size: 3rem; /* Was 48px */
   font-weight: bold;
   background: -webkit-linear-gradient(
     left,
@@ -67,17 +67,17 @@ a {
 }
 
 .main-content {
-  max-width: 30%;
+  max-width: 90%; /* More flexible for smaller screens */
   margin: 0 auto;
 }
 
 .cta-buttons button {
-  padding: 10px;
-  margin: 10% 40px;
+  padding: 0.625rem;
+  margin: 10% 2.5rem; /* Adjusted for better responsiveness */
   cursor: pointer;
-  border-radius: 8px;
-  width: 184px;
-  height: 51px;
+  border-radius: 0.5rem;
+  width: 11.5rem; /* Was 184px */
+  height: 3.1875rem; /* Was 51px */
 }
 
 .cta-1 {
@@ -100,7 +100,7 @@ a {
 }
 
 .reason {
-  width: 30%;
+  width: 100%; /* Full width on smaller screens */
   text-align: center;
 }
 
@@ -123,4 +123,13 @@ footer {
   padding: 20px 0;
 }
 
-/* Responsive design and additional styling would be required here */
+/* Media Queries for responsive adjustments */
+@media (min-width: 768px) {
+  .reason {
+    width: 30%; /* Three columns on larger screens */
+  }
+
+  .main-content {
+    max-width: 30%; /* Fixed width on larger screens */
+  }
+}
