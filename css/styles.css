@@ -205,3 +205,22 @@ footer {
     max-width: 30%; /* Fixed width on larger screens */
   }
 }
+
+.courseInfo {
+  display: flex;
+  flex-direction: row;
+}
+.courseInfo > p {
+  margin: 0;
+}
+#courseContainer {
+  padding: 0 15rem;
+}
+#courseHeroContainer {
+  min-height: 30vh;
+  text-align: center;
+}
+#courseHero {
+  height: 50vh;
+  width: 100%;
+}
