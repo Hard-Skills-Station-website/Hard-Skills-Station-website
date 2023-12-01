@@ -45,7 +45,7 @@ a {
 
 .text-gradient {
   font-size: 6.5rem; /* Was 48px */
-  font weight: 600;
+  font-weight: 600;
   background: -webkit-linear-gradient(
     left,
     #0026ef,
@@ -136,8 +136,8 @@ a {
 .main-content {
   max-width: 40%; /* More flexible for smaller screens */
   margin: 0 auto;
-  font-size: 1.3rem;
-  /*text-align: justify;*/
+  font-size: 1.4rem;
+  text-align: justify;
 }
 
 .cta-buttons button {
