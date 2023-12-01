@@ -8,17 +8,37 @@
   }
   .courseInfo > p {
     margin: 0;
-    color: red;
   }
   #courseWrapper {
     padding: 0 15rem;
   }
-  #courseHeroContainer {
-    min-height: 30vh;
-    text-align: center;
-  }
   #courseHero {
     height: 50vh;
     width: 100%;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 84%), url("/hero75.png");
+    background-size: cover;
+    background-position: center;
+  }
+    button {
+    padding: 0.625rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    width: 11.5rem; /* Was 184px */
+    height: 3.1875rem; /* Was 51px */
+    font-size: 1rem;
+  }
+  .cta-1 {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    margin: 2rem 2rem 0 0;
   }
   
+  .cta-2 {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+  }
+  .signUp {
+    color: white;
+  }
