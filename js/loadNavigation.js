@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const navElement = document.querySelector("#nav-placeholder");
   navElement.innerHTML = `
-      <nav class="courseCointainer">
+      <nav class="courseContainer">
         <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
         <div class="auth-buttons">
           <a class="signUp" id="signUp" href="">Sign up</a>

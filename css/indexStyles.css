@@ -2,10 +2,15 @@
 .main-header {
   color: white;
   text-align: center;
-  padding: 50px 20px;
+  padding: 1rem 0.5rem;
   background: url("/mainhero.png") no-repeat center; /* This would be the wavy background image */
   background-size: cover;
   min-height: 40vh;
+
+}
+
+h1 {
+  padding-top: 6rem;
 }
 
 .text-black {

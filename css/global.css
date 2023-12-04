@@ -20,17 +20,17 @@ i {
   color: var(--accent);
 }
 
-.courseCointainer {
-  padding: 1rem 3rem;
+.courseContainer {
+  padding: 0 3rem;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.625rem 1.25rem; /* Was 10px 20px */
-  background-color: transparent;
-  color: var(--bg);
+  padding: 0.625rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: transparent;
 }
 
 a {
