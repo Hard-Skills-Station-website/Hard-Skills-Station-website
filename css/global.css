@@ -70,6 +70,10 @@ footer {
   margin-top: 0;
 }
 
+.header-logo {
+  height: 4rem;
+}
+
 .flex-footer {
   display: flex;
   align-items: center;
@@ -199,6 +203,7 @@ input[type="password"] {
     right: 10px;
   }
 }
+
 i {
   font-size: 2rem;
 }
