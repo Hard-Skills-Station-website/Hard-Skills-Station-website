@@ -88,6 +88,117 @@ footer {
   max-width: 6rem;
 }
 
+/* Styles for the modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  transform: fadeIn(0.5s);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px; /* Maximum width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Rounded corners */
+  position: relative; /* For absolute positioning of close button */
+}
+
+/* The Close Button (x) */
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Input fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px; /* Rounded borders */
+}
+
+/* Set a style for all buttons */
+.form-button {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Extra styles for the form toggle links */
+.form-toggle {
+  color: #007bff;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form-toggle:hover {
+  text-decoration: underline;
+}
+
+/* Style for form headings */
+.form-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Footer text */
+.form-footer {
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* Adjusting form container */
+.form-container {
+  padding: 30px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 450px) {
+  .modal-content {
+    width: 95%;
+  }
+
+  .close {
+    font-size: 25px;
+    top: 0;
+    right: 10px;
+  }
+
 i {
   font-size: 2rem;
 }
