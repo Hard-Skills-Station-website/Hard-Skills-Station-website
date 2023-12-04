@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       </p>
     </div>
     <div class="social-media-links">
-      <!-- Social media icons with links -->
+    <a href=""><i class="fa-brands fa-facebook"></i></a>
+    <a href=""><i class="fa-brands fa-youtube"></i></a>
     </div>
     </div>`;
 });
