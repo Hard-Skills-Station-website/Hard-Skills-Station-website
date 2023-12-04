@@ -3,7 +3,7 @@
   color: white;
   text-align: center;
   padding: 50px 20px;
-  background: url("/hero25.png") no-repeat center; /* This would be the wavy background image */
+  background: url("/mainhero.png") no-repeat center; /* This would be the wavy background image */
   background-size: cover;
   min-height: 40vh;
 }
