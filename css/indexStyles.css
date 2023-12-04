@@ -39,13 +39,13 @@
   font-weight: 600;
   background: -webkit-linear-gradient(
     left,
-    #1458d2,
-    #2581ba
+    #2581ba,
+    #1458d2
   ); /* For Safari 5.1 to 6.0 */
   background: linear-gradient(
     to right,
-    #2581ba,
-    #1458d2
+    #1458d2,
+    #2581ba
   ); /* Standard syntax; adjust your colors as needed */
   -webkit-background-clip: text;
   background-clip: text;
@@ -56,13 +56,13 @@
   font-weight: 600;
   background: -webkit-linear-gradient(
     left,
-    #33a3ab,
-    #349daf
+    #349daf,
+    #33a3ab
   ); /* For Safari 5.1 to 6.0 */
   background: linear-gradient(
     to right,
+    #33a3ab,
     #349daf,
-    #33a3ab
   ); /* Standard syntax; adjust your colors as needed */
   -webkit-background-clip: text;
   background-clip: text;
@@ -73,13 +73,13 @@
   font-weight: 600;
   background: -webkit-linear-gradient(
     left,
-    #257ccc,
-    #2a61ed
+    #2a61ed,
+    #257ccc
   ); /* For Safari 5.1 to 6.0 */
   background: linear-gradient(
     to right,
-    #2a61ed,
-    #257ccc
+    #257ccc,
+    #2a61ed
   ); /* Standard syntax; adjust your colors as needed */
   -webkit-background-clip: text;
   background-clip: text;
@@ -90,13 +90,13 @@
   font-weight: 600;
   background: -webkit-linear-gradient(
     left,
-    #3cba97,
-    #35aba6
+    #35aba6,
+    #3cba97
   ); /* For Safari 5.1 to 6.0 */
   background: linear-gradient(
     to right,
-    #35aba6,
-    #3cba97
+    #3cba97,
+    #35aba6
   ); /* Standard syntax; adjust your colors as needed */
   -webkit-background-clip: text;
   background-clip: text;
