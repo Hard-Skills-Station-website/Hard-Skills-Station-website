@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   var signUpBtn = document.querySelector('#signUp');
   var loginBtn = document.querySelector('#loginBtn');
 
-  
+
   // Bind the modal to the Sign Up button
   signUpBtn.addEventListener('click', function(event) {
     event.preventDefault();  // Prevent the default anchor action
@@ -152,5 +152,3 @@ function buildSignUpForm() {
 
   return formContainer;
 }
-
-// Make sure to add the CSS rules for the classes used here.
