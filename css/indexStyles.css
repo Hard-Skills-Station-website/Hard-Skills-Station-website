@@ -142,7 +142,7 @@ h1 {
 }
 
 .reason {
-  width: 100%; /* Full width on smaller screens */
+  width: 20rem; /* Full width on smaller screens */
   text-align: center;
 }
 
