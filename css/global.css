@@ -23,7 +23,9 @@ i {
 .courseCointainer {
   padding: 1rem 3rem;
 }
-
+.signUp {
+  font-size: 0.9rem;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -48,7 +50,6 @@ a {
   height: 2.125rem;
   border-radius: 0.5rem;
   border: none;
-  font-size: 1rem;
   cursor: pointer;
 }
 
