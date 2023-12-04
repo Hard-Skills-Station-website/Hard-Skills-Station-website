@@ -216,3 +216,12 @@ i {
 .fa-brands {
   margin-right: 1rem;
 }
+button {
+  transition: 0.3s ease-in-out;
+}
+button:hover {
+    transform: scale(1.025);
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(219,219,219,1);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(219,219,219,1);
+    box-shadow: 0px 10px 10px 0px rgba(219,219,219,1);
+}
