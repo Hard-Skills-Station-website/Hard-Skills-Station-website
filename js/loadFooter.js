@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         bcse@iba.dk
       </p>
       <div class="social-media-links">
-        <a href="https://www.facebook.com/hardskillsstation"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.youtube.com/channel/UCVoNPMFDzk6pY_36EAAo-BQ"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.facebook.com/hardskillsstation" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCVoNPMFDzk6pY_36EAAo-BQ" target="_blank"><i class="fa-brands fa-youtube"></i></a>
       </div>
   </div>
 </div>`;
