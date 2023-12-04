@@ -87,3 +87,16 @@ footer {
 .footer-logo p {
   max-width: 6rem;
 }
+
+i {
+  font-size: 2rem;
+}
+.fa-facebook {
+  color: #0664fc;
+}
+.fa-youtube {
+  color: #ff0000;
+}
+.fa-brands {
+  margin-right: 1rem;
+}
