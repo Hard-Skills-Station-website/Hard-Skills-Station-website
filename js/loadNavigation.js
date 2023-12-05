@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   const navElement = document.querySelector("#nav-placeholder");
   navElement.innerHTML = `
       <nav class="courseContainer">
           <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
           <div class="language-switch">
               <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
-              <img src="united-kingdom.png" alt="English" id="switchToEnglish" />
+              <img src="/united-kingdom.png" alt="English" id="switchToEnglish" />
           </div>
           <div class="auth-buttons">
               <a class="signUp" id="signUp" href="">Sign up</a>
@@ -15,20 +15,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   `;
 
   // Indlæs og anvend det gemte sprogvalg
-  const savedLanguage = localStorage.getItem("preferredLanguage");
-  if (savedLanguage) {
+  const savedLanguage = localStorage.getItem("preferredLanguage") || "en"; // Antager engelsk som standardsprog
+  if (savedLanguage !== "en") {
     switchLanguage(savedLanguage);
   }
 
   // Tilføj event listeners for sprogskifte
-  document.getElementById("switchToDanish").addEventListener("click", () => {
-    console.log("Danish flag clicked");
-    setLanguage("da");
-  });
-  document.getElementById("switchToEnglish").addEventListener("click", () => {
-    console.log("English flag clicked");
-    setLanguage("en");
-  });
+  document
+    .getElementById("switchToDanish")
+    .addEventListener("click", () => setLanguage("da"));
+  document
+    .getElementById("switchToEnglish")
+    .addEventListener("click", () => setLanguage("en"));
 });
 
 async function translateText(text, targetLanguage) {
@@ -68,17 +66,22 @@ function setLanguage(language) {
 
 function switchLanguage(targetLang) {
   document.querySelectorAll("[data-translate]").forEach(async (element) => {
-    const originalText = element.textContent;
-    const translatedText = await translateText(originalText, targetLang);
-    element.textContent = translatedText;
-  });
-}
+    // Gem det oprindelige indhold af spans og erstat dem i teksten
+    const spans = Array.from(element.querySelectorAll("span"));
+    const spanPlaceholders = spans.map((span, index) => {
+      element.replaceChild(document.createTextNode(`__SPAN_${index}__`), span);
+      return span.outerHTML; // Gemmer det oprindelige HTML for span
+    });
 
-function switchLanguage(language) {
-  document.querySelectorAll("[data-translate]").forEach(async (element) => {
-    const originalText = element.textContent;
-    const translatedText = await translateText(originalText, language);
-    element.textContent = translatedText;
+    const translatedText = await translateText(element.textContent, targetLang);
+
+    // Sæt span indholdet tilbage i den oversatte tekst
+    let updatedText = translatedText;
+    spanPlaceholders.forEach((html, index) => {
+      updatedText = updatedText.replace(`__SPAN_${index}__`, html);
+    });
+
+    element.innerHTML = updatedText;
   });
 }
 
