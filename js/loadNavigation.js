@@ -77,22 +77,12 @@ function setLanguage(language) {
 
 function switchLanguage(targetLang) {
   document.querySelectorAll("[data-translate]").forEach(async (element) => {
-    // Gem det oprindelige indhold af spans og erstat dem i teksten
-    const spans = Array.from(element.querySelectorAll("span"));
-    const spanPlaceholders = spans.map((span, index) => {
-      element.replaceChild(document.createTextNode(`__SPAN_${index}__`), span);
-      return span.outerHTML; // Gemmer det oprindelige HTML for span
-    });
+    // Normaliser whitespace i HTML indhold
+    let originalHtml = element.innerHTML;
+    originalHtml = originalHtml.replace(/\s+/g, " ").trim(); // Fjerner overflødige mellemrum
 
-    const translatedText = await translateText(element.textContent, targetLang);
-
-    // Sæt span indholdet tilbage i den oversatte tekst
-    let updatedText = translatedText;
-    spanPlaceholders.forEach((html, index) => {
-      updatedText = updatedText.replace(`__SPAN_${index}__`, html);
-    });
-
-    element.innerHTML = updatedText;
+    const translatedHtml = await translateText(originalHtml, targetLang);
+    element.innerHTML = translatedHtml;
   });
 }
 
