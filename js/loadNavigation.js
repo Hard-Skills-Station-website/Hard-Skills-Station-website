@@ -2,14 +2,85 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const navElement = document.querySelector("#nav-placeholder");
   navElement.innerHTML = `
       <nav class="courseContainer">
-        <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
-        <div class="auth-buttons">
-          <a class="signUp" id="signUp" href="">Sign up</a>
-          <button id="loginBtn">Login</button>
-        </div>
+          <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
+          <div class="language-switch">
+              <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
+              <img src="united-kingdom.png" alt="English" id="switchToEnglish" />
+          </div>
+          <div class="auth-buttons">
+              <a class="signUp" id="signUp" href="">Sign up</a>
+              <button id="loginBtn">Login</button>
+          </div>
       </nav>
-    `;
+  `;
+
+  // Indlæs og anvend det gemte sprogvalg
+  const savedLanguage = localStorage.getItem("preferredLanguage");
+  if (savedLanguage) {
+    switchLanguage(savedLanguage);
+  }
+
+  // Tilføj event listeners for sprogskifte
+  document.getElementById("switchToDanish").addEventListener("click", () => {
+    console.log("Danish flag clicked");
+    setLanguage("da");
+  });
+  document.getElementById("switchToEnglish").addEventListener("click", () => {
+    console.log("English flag clicked");
+    setLanguage("en");
+  });
 });
+
+async function translateText(text, targetLanguage) {
+  try {
+    const response = await fetch(
+      `https://translation.googleapis.com/language/translate/v2?key=AIzaSyAJBfEv4mdoP0Zm3HgSGai1CCDfIkf9CsM`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          q: text,
+          target: targetLanguage, // Sørg for, at dette felt er korrekt angivet
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("API Error:", errorData);
+      return text;
+    }
+
+    const data = await response.json();
+    return data.data.translations[0].translatedText;
+  } catch (error) {
+    console.error("Error during translation", error);
+    return text;
+  }
+}
+
+function setLanguage(language) {
+  switchLanguage(language);
+  localStorage.setItem("preferredLanguage", language);
+}
+
+function switchLanguage(targetLang) {
+  document.querySelectorAll("[data-translate]").forEach(async (element) => {
+    const originalText = element.textContent;
+    const translatedText = await translateText(originalText, targetLang);
+    element.textContent = translatedText;
+  });
+}
+
+function switchLanguage(language) {
+  document.querySelectorAll("[data-translate]").forEach(async (element) => {
+    const originalText = element.textContent;
+    const translatedText = await translateText(originalText, language);
+    element.textContent = translatedText;
+  });
+}
 
 document.addEventListener("DOMContentLoaded", (event) => {
   var signUpBtn = document.querySelector("#signUp");
