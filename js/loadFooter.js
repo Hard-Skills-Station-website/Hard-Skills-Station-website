@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     <!-- Contact info and social media links -->
   <div class="contact-info">
     <p data-translate>Do you have any questions or suggestions for events?</p>
-      <p data-translate>
+      <p id="contactPerson" data-translate>
         Contact person for Hard Skills Station: Biljana Seier, project manager
-        bcse@iba.dk
+        <a id="contactEmail" href="mailto:bcse@iba.dk">bcse@iba.dk</a>
       </p>
       <div class="social-media-links">
         <a href="https://www.facebook.com/hardskillsstation" target="_blank"><i class="fa-brands fa-facebook"></i></a>

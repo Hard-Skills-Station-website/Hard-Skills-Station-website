@@ -28,18 +28,18 @@
     font-size: 1rem;
   }
   .cta-1 {
-    background-color: #0066ff;
-    color: white;
+    background-color: var(--accent);
+    color: var(--bg);
     border: none;
     margin: 2rem 2rem 0 0;
   }
   
   .cta-2 {
     background-color: transparent;
-    color: black;
-    border: 2px solid black;
+    color: var(--text);
+    border: 2px solid var(--text);
   }
   .signUp {
-    color: white;
+    color: var(--bg);
   }
  

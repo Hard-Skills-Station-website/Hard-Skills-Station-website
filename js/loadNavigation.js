@@ -4,12 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
       <nav class="courseContainer">
           <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
           <div class="language-switch">
-              <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
-              <img src="/united-kingdom.png" alt="English" id="switchToEnglish" />
+          <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
+          <img src="/united-kingdom.png" alt="English" id="switchToEnglish" />
           </div>
+          <div id="controls">
+          <div>
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
+          </div>
+            
           <div class="auth-buttons">
-              <a class="signUp" id="signUp" href="">Sign up</a>
-              <button id="loginBtn">Login</button>
+                <a class="signUp" id="signUp" href="">Sign up</a>
+                <button id="loginBtn">Login</button>
+          </div>
           </div>
       </nav>
   `;

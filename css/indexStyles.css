@@ -1,21 +1,22 @@
 /* styles.css */
 .main-header {
-  color: white;
+  color: var(--bg);
   text-align: center;
   padding: 1rem 0.5rem;
   background: url("/mainhero.png") no-repeat center; /* This would be the wavy background image */
   background-size: cover;
   min-height: 40vh;
-
 }
-
+#signUp {
+  color: var(--text);
+}
 h1 {
   padding-top: 6rem;
 }
 
 .text-black {
   display: block;
-  color: black;
+  color: var(--text);
   font-size: 6.5rem; /* Was 48px */
   font-weight: 600;
 }
@@ -125,14 +126,14 @@ h1 {
 }
 
 .cta-1 {
-  background-color: #0066ff;
-  color: white;
+  background-color: var(--accent);
+  color: #fff;
   border: none;
 }
 .cta-2 {
   background-color: transparent;
-  color: black;
-  border: 2px solid black;
+  color: var(--text);
+  border: 2px solid var(--text);
 }
 .reasons {
   display: flex;
@@ -152,7 +153,7 @@ h1 {
 }
 
 .event-card {
-  background-color: white;
+  background-color: var(--bg);
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
