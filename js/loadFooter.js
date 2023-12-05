@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   </div>
     <!-- Contact info and social media links -->
   <div class="contact-info">
-    <p>Do you have any questions or suggestions for events?</p>
-      <p>
+    <p data-translate>Do you have any questions or suggestions for events?</p>
+      <p data-translate>
         Contact person for Hard Skills Station: Biljana Seier, project manager
         bcse@iba.dk
       </p>
