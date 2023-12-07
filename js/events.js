@@ -29,6 +29,7 @@ function createEventCard(event) {
   card.innerHTML = `
         <img src="${event.image}" alt="Event billede">
         <h3>${event.headline}</h3>
+        <p>${event.description}</p>
         <p>Dato: ${event.date}</p>
         <p>Sted: ${event.location}</p>
     `;
