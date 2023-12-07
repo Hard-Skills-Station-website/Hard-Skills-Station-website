@@ -1,5 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navElement = document.querySelector("#nav-placeholder");
+
+  // if (/* the user is logged in */) {
+  //   navElement.innerHTML = `
+  //   <nav class="courseContainer">
+  //     <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
+  //     <div class="language-switch">
+  //     <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
+  //     <img src="/united-kingdom.png" alt="English" id="switchToEnglish" />
+  //     </div>
+  //     <div id="controls">
+  //     <div>
+  //       <input type="checkbox" class="checkbox" id="checkbox">
+  //       <label for="checkbox" class="checkbox-label">
+  //         <i class="fas fa-moon"></i>
+  //         <i class="fas fa-sun"></i>
+  //         <span class="ball"></span>
+  //       </label>
+  //     </div>
+  //     <div><i class="fa-solid fa-circle-user"></i></div>
+  //     </div>
+  //   </nav>
+  //   `;
+  // } else {
   navElement.innerHTML = `
       <nav class="courseContainer">
           <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
