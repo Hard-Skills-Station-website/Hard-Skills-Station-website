@@ -26,12 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   // Indlæs og anvend det gemte sprogvalg
-  const savedLanguage = localStorage.getItem("preferredLanguage") || "en"; // Antager engelsk som standardsprog
+  const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
   if (savedLanguage !== "en") {
     switchLanguage(savedLanguage);
   }
-
-  // Tilføj event listeners for sprogskifte
   document
     .getElementById("switchToDanish")
     .addEventListener("click", () => setLanguage("da"));
@@ -40,51 +38,51 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", () => setLanguage("en"));
 });
 
-async function translateText(text, targetLanguage) {
-  try {
-    const response = await fetch(
-      `https://translation.googleapis.com/language/translate/v2?key=AIzaSyAJBfEv4mdoP0Zm3HgSGai1CCDfIkf9CsM`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          q: text,
-          target: targetLanguage, // Sørg for, at dette felt er korrekt angivet
-        }),
-      }
-    );
+// async function translateText(text, targetLanguage) {
+//   try {
+//     const response = await fetch(
+//       `https://translation.googleapis.com/language/translate/v2?key=AIzaSyAJBfEv4mdoP0Zm3HgSGai1CCDfIkf9CsM`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           q: text,
+//           target: targetLanguage, // Sørg for, at dette felt er korrekt angivet
+//         }),
+//       }
+//     );
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("API Error:", errorData);
-      return text;
-    }
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       console.error("API Error:", errorData);
+//       return text;
+//     }
 
-    const data = await response.json();
-    return data.data.translations[0].translatedText;
-  } catch (error) {
-    console.error("Error during translation", error);
-    return text;
-  }
-}
+//     const data = await response.json();
+//     return data.data.translations[0].translatedText;
+//   } catch (error) {
+//     console.error("Error during translation", error);
+//     return text;
+//   }
+// }
 
-function setLanguage(language) {
-  switchLanguage(language);
-  localStorage.setItem("preferredLanguage", language);
-}
+// function setLanguage(language) {
+//   switchLanguage(language);
+//   localStorage.setItem("preferredLanguage", language);
+// }
 
-function switchLanguage(targetLang) {
-  document.querySelectorAll("[data-translate]").forEach(async (element) => {
-    // Normaliser whitespace i HTML indhold
-    let originalHtml = element.innerHTML;
-    originalHtml = originalHtml.replace(/\s+/g, " ").trim(); // Fjerner overflødige mellemrum
+// function switchLanguage(targetLang) {
+//   document.querySelectorAll("[data-translate]").forEach(async (element) => {
+//     // Normaliser whitespace i HTML indhold
+//     let originalHtml = element.innerHTML;
+//     originalHtml = originalHtml.replace(/\s+/g, " ").trim(); // Fjerner overflødige mellemrum
 
-    const translatedHtml = await translateText(originalHtml, targetLang);
-    element.innerHTML = translatedHtml;
-  });
-}
+//     const translatedHtml = await translateText(originalHtml, targetLang);
+//     element.innerHTML = translatedHtml;
+//   });
+// }
 
 document.addEventListener("DOMContentLoaded", (event) => {
   var signUpBtn = document.querySelector("#signUp");
@@ -256,7 +254,7 @@ async function loginUser() {
     localStorage.setItem("userToken", userData.token);
   } catch (error) {
     console.error("Login Error:", error);
-    alert("Login fejl: " + error.message); // Vis fejlmeddelelse til brugeren
+    alert("Login fejl: " + error.message);
   }
 }
 
@@ -301,7 +299,9 @@ async function signUpUser() {
 
     if (!response.ok) {
       const errorBody = await response.json(); // Hent detaljeret fejlbeskrivelse
-      throw new Error("Signup failed: " + response.status + " - " + JSON.stringify(errorBody));
+      throw new Error(
+        "Signup failed: " + response.status + " - " + JSON.stringify(errorBody)
+      );
     }
 
     showToast("Tilmelding succesfuld! Du kan nu logge ind.");
