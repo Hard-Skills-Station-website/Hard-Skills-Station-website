@@ -144,7 +144,7 @@ footer {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--bg);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -167,7 +167,7 @@ footer {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--text);
   text-decoration: none;
   cursor: pointer;
 }
@@ -224,6 +224,13 @@ input[type="password"] {
 /* Adjusting form container */
 .form-container {
   padding: 30px;
+}
+
+.modalButton {
+  padding: 0.7rem;
+  min-width: 10rem;
+  border-radius: 5px;
+  margin-right: 1rem;
 }
 
 /* Responsive adjustments */
@@ -330,4 +337,15 @@ button:hover {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+}
+.eventInfoContainer {
+  display: flex;
+  align-items: center;
+}
+.eventInfoContainer > i {
+  margin-right: 1rem;
+  justify-self: center;
+}
+.eventInfoContainer > p {
+  
 }

@@ -209,6 +209,8 @@ function buildLoginForm() {
   return formContainer;
 }
 
+
+
 function buildSignUpForm() {
   // Create signup form elements based on the provided design
   var formContainer = document.createElement("div");
@@ -339,3 +341,99 @@ async function signUpUser() {
     return emailRegex.test(email);
   }
 }
+
+// JavaScript code to create a modal based on the content
+
+// Function to build the modal
+function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDescription) {
+  
+  var existingModal = document.getElementById("modal");
+  if (existingModal) {
+    existingModal.remove();
+  }
+
+  var modal = document.createElement("div");
+  modal.setAttribute("id", "modal");
+  modal.setAttribute("class", "modal");
+
+  var modalContent = document.createElement("div");
+  modalContent.setAttribute("class", "modal-content");
+
+  var closeBtn = document.createElement("span");
+  closeBtn.setAttribute("class", "close");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+  modalContent.appendChild(closeBtn);
+
+  var eventDetails = document.createElement("div");
+  eventDetails.setAttribute("class", "event-details");
+
+  var eventNameElement = document.createElement("h2");
+  eventNameElement.textContent = eventName;
+  eventDetails.appendChild(eventNameElement);
+
+  var dateContainer = document.createElement("div");
+  dateContainer.setAttribute("class", "eventInfoContainer");
+  eventDetails.appendChild(dateContainer);
+  
+  var locationIconElement = document.createElement("i");
+  locationIconElement.classList.add("fa-regular", "fa-calendar-days");
+  dateContainer.appendChild(locationIconElement);
+
+  var eventDateElement = document.createElement("p");
+  eventDateElement.textContent = "Date: " + eventDate;
+  dateContainer.appendChild(eventDateElement);
+
+  var locationContainer = document.createElement("div");
+  locationContainer.setAttribute("class", "eventInfoContainer");
+  eventDetails.appendChild(locationContainer);
+
+  var locationIconElement = document.createElement("i");
+  locationIconElement.classList.add("fa-solid", "fa-location-dot");
+  locationContainer.appendChild(locationIconElement);
+
+  var eventLocationElement = document.createElement("p");
+  eventLocationElement.textContent = "Location: " + eventLocation;
+  locationContainer.appendChild(eventLocationElement);
+
+  var eventDescriptionElement = document.createElement("p");
+  eventDescriptionElement.textContent = eventDescription;
+  eventDetails.appendChild(eventDescriptionElement);
+
+  // Button for 'Tilmeld Dig' (Sign Up)
+  var signUpButton = document.createElement("button");
+  signUpButton.setAttribute("data-translate", "");
+  signUpButton.setAttribute("class", "cta-1 modalButton modalcta-1");
+  signUpButton.textContent = "Tilmeld Dig";
+  eventDetails.appendChild(signUpButton);
+  
+   // Button for 'Se Alle Events' (See All Events)
+  var seeAllEventsButton = document.createElement("button");
+  seeAllEventsButton.setAttribute("data-translate", "");
+  seeAllEventsButton.setAttribute("class", "cta-2 modalButton modalcta-2");
+  seeAllEventsButton.textContent = "Se Alle Events";
+  seeAllEventsButton.addEventListener("click", function() {
+    modal.style.display = "none";
+    var eventsContainer = document.getElementById("eventsContainer");
+    if (eventsContainer) {
+      eventsContainer.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+  eventDetails.appendChild(seeAllEventsButton);
+
+  modalContent.appendChild(eventDetails);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+
+  modal.style.display = "block";
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
+

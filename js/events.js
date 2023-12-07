@@ -33,8 +33,11 @@ function createEventCard(event) {
         <p>Dato: ${event.date}</p>
         <p>Sted: ${event.location}</p>
     `;
-
-  return card;
+    
+    card.addEventListener("click", function() {
+        buildEventModal(event.image, event.headline, event.date, event.location, event.description);
+      });
+    return card;
 }
 
 // Kald denne funktion, når siden indlæses
