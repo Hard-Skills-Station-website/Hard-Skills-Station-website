@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
       </nav>
   `;
 
-  // Indlæs og anvend det gemte sprogvalg
-  const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
-  if (savedLanguage !== "en") {
-    switchLanguage(savedLanguage);
-  }
+  // // Indlæs og anvend det gemte sprogvalg
+  // const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+  // if (savedLanguage !== "en") {
+  //   switchLanguage(savedLanguage);
+  // }
   document
     .getElementById("switchToDanish")
     .addEventListener("click", () => setLanguage("da"));
