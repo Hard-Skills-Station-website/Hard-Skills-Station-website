@@ -158,18 +158,20 @@ function buildLoginForm() {
 
   var emailInput = document.createElement("input");
   emailInput.setAttribute("type", "email");
+  emailInput.setAttribute("id", "login-email");
   emailInput.setAttribute("placeholder", "E-mail");
   formContainer.appendChild(emailInput);
 
   var passwordInput = document.createElement("input");
   passwordInput.setAttribute("type", "password");
+  passwordInput.setAttribute("id", "login-password");
   passwordInput.setAttribute("placeholder", "Password");
   formContainer.appendChild(passwordInput);
 
   var loginButton = document.createElement("button");
   loginButton.setAttribute("class", "form-button");
   loginButton.textContent = "Log In";
-  // Add event listener for login logic here
+  loginButton.addEventListener("click", loginUser);
   formContainer.appendChild(loginButton);
 
   var signUpToggle = document.createElement("a");
@@ -198,18 +200,20 @@ function buildSignUpForm() {
 
   var emailInput = document.createElement("input");
   emailInput.setAttribute("type", "email");
+  emailInput.setAttribute("id", "signup-email");
   emailInput.setAttribute("placeholder", "E-mail");
   formContainer.appendChild(emailInput);
 
   var passwordInput = document.createElement("input");
   passwordInput.setAttribute("type", "password");
+  passwordInput.setAttribute("id", "signup-password");
   passwordInput.setAttribute("placeholder", "Password");
   formContainer.appendChild(passwordInput);
 
   var signUpButton = document.createElement("button");
   signUpButton.setAttribute("class", "form-button");
   signUpButton.textContent = "Sign Up";
-  // Add event listener for signup logic here
+  signUpButton.addEventListener("click", signUpUser);
   formContainer.appendChild(signUpButton);
 
   var loginToggle = document.createElement("a");
@@ -224,4 +228,91 @@ function buildSignUpForm() {
   formContainer.appendChild(loginToggle);
 
   return formContainer;
+}
+
+async function loginUser() {
+  var email = document.getElementById("login-email").value;
+  var password = document.getElementById("login-password").value;
+
+  try {
+    const response = await fetch(
+      "https://hardskillstation-api.azurewebsites.net/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Login failed: " + response.status);
+    } else {
+      showToast("Login succesfuld!");
+    }
+
+    const userData = await response.json();
+    localStorage.setItem("userToken", userData.token);
+  } catch (error) {
+    console.error("Login Error:", error);
+    alert("Login fejl: " + error.message); // Vis fejlmeddelelse til brugeren
+  }
+}
+
+function showToast(message) {
+  // Opret en toast-element
+  var toast = document.createElement("div");
+  toast.className = "toast";
+  toast.textContent = message;
+
+  // Tilføj toast til body og vis den
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add("show"), 100);
+
+  // Fjern toast efter et stykke tid
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => document.body.removeChild(toast), 300);
+  }, 4000);
+}
+
+async function signUpUser() {
+  var email = document.getElementById("signup-email").value;
+  var password = document.getElementById("signup-password").value;
+
+  // Valider email
+  if (!validateEmail(email)) {
+    alert("Indtast venligst en gyldig email-adresse.");
+    return; // Stop funktionen, hvis emailen ikke er gyldig
+  }
+
+  try {
+    const response = await fetch(
+      "https://hardskillstation-api.azurewebsites.net/createUser",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }), // Tjek om yderligere felter kræves
+      }
+    );
+
+    if (!response.ok) {
+      const errorBody = await response.json(); // Hent detaljeret fejlbeskrivelse
+      throw new Error("Signup failed: " + response.status + " - " + JSON.stringify(errorBody));
+    }
+
+    showToast("Tilmelding succesfuld! Du kan nu logge ind.");
+  } catch (error) {
+    console.error("Signup Error:", error);
+    alert("Tilmeldingsfejl: " + error.message); // Vis fejlmeddelelse til brugeren
+  }
+
+  // Funktion til at validere email
+  function validateEmail(email) {
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailRegex.test(email);
+  }
 }
