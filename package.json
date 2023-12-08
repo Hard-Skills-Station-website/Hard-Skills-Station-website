@@ -1,7 +1,17 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.0",
-    "@fortawesome/free-solid-svg-icons": "^6.5.0",
-    "@google-cloud/translate": "^8.0.2"
-  }
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "name": "hard-skills-station-website",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
