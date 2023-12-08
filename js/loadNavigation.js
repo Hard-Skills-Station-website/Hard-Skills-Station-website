@@ -1,29 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navElement = document.querySelector("#nav-placeholder");
+  const userToken = localStorage.getItem("userToken");
 
-  // if (/* the user is logged in */) {
-  //   navElement.innerHTML = `
-  //   <nav class="courseContainer">
-  //     <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
-  //     <div class="language-switch">
-  //     <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
-  //     <img src="/united-kingdom.png" alt="English" id="switchToEnglish" />
-  //     </div>
-  //     <div id="controls">
-  //     <div>
-  //       <input type="checkbox" class="checkbox" id="checkbox">
-  //       <label for="checkbox" class="checkbox-label">
-  //         <i class="fas fa-moon"></i>
-  //         <i class="fas fa-sun"></i>
-  //         <span class="ball"></span>
-  //       </label>
-  //     </div>
-  //     <div><i class="fa-solid fa-circle-user"></i></div>
-  //     </div>
-  //   </nav>
-  //   `;
-  // } else {
-  navElement.innerHTML = `
+  if (userToken) {
+    navElement.innerHTML = `
+    <nav class="courseContainer">
+      <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
+      <div class="language-switch">
+      <img src="/denmark.png" alt="Dansk" id="switchToDanish" />
+      <img src="/united-kingdom.png" alt="English" id="switchToEnglish" />
+      </div>
+      <div id="controls">
+      <div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+      <div id="user-profile">
+      <i class="fa-solid fa-circle-user"></i>
+      <div class="dropdown-menu">
+        <a href="#" id="logout">Log ud</a>
+        <!-- Tilføj yderligere menuvalg her om nødvendigt -->
+      </div>
+    </div>
+      </div>
+    </nav>
+    `;
+  } else {
+    navElement.innerHTML = `
       <nav class="courseContainer">
           <div><a href="index.html"><img class="header-logo" src="/logo.webp" alt="" /></div></a>
           <div class="language-switch">
@@ -45,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button id="loginBtn">Login</button>
           </div>
           </div>
-      </nav>
+      </nav>  
   `;
-
+  }
   // // Indlæs og anvend det gemte sprogvalg
   // const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
   // if (savedLanguage !== "en") {
@@ -272,32 +279,19 @@ async function loginUser() {
     if (!response.ok) {
       throw new Error("Login failed: " + response.status);
     } else {
-      showToast("Login succesfuld!");
+      alert("Login succesfuld!");
     }
 
     const userData = await response.json();
     localStorage.setItem("userToken", userData.token);
+
+    // Generer et unikt ID baseret på den nuværende tid
+    var uniqueID = "user-" + new Date().getTime();
+    localStorage.setItem("userID", uniqueID);
   } catch (error) {
     console.error("Login Error:", error);
     alert("Login fejl: " + error.message);
   }
-}
-
-function showToast(message) {
-  // Opret en toast-element
-  var toast = document.createElement("div");
-  toast.className = "toast";
-  toast.textContent = message;
-
-  // Tilføj toast til body og vis den
-  document.body.appendChild(toast);
-  setTimeout(() => toast.classList.add("show"), 100);
-
-  // Fjern toast efter et stykke tid
-  setTimeout(() => {
-    toast.classList.remove("show");
-    setTimeout(() => document.body.removeChild(toast), 300);
-  }, 4000);
 }
 
 async function signUpUser() {
@@ -329,7 +323,7 @@ async function signUpUser() {
       );
     }
 
-    showToast("Tilmelding succesfuld! Du kan nu logge ind.");
+    alert("Tilmelding succesfuld! Du kan nu logge ind.");
   } catch (error) {
     console.error("Signup Error:", error);
     alert("Tilmeldingsfejl: " + error.message); // Vis fejlmeddelelse til brugeren
@@ -342,6 +336,7 @@ async function signUpUser() {
   }
 }
 
+<<<<<<< Updated upstream
 // JavaScript code to create a modal based on the content
 
 // Function to build the modal
@@ -437,3 +432,9 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
 }
 
 
+=======
+document.getElementById("logout").addEventListener("click", function () {
+  localStorage.removeItem("userToken");
+  window.location.href = "index.html";
+});
+>>>>>>> Stashed changes
