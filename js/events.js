@@ -27,13 +27,21 @@ function createEventCard(event) {
   const card = document.createElement("div");
   card.className = "event-card";
 
+  const formattedDate = formatDate(event.date);
+
   // Tilpas dette for at matche dit event data model og hvordan du vil vise det
   card.innerHTML = `
         <img src="${event.image}" alt="Event billede">
         <h3>${event.headline}</h3>
         <p>${event.summary}</p>
-        <p>Dato: ${event.date}</p>
-        <p>Sted: ${event.location}</p>
+        <div class="eventInfoContainer">
+        <i class="fa-regular fa-calendar-days previewIcon"></i>
+        <p>${formattedDate}</p>
+        </div>
+        <div class="eventInfoContainer">
+        <i class="fa-solid fa-location-dot previewIcon"></i>
+        <p>${event.location}</p>
+        </div>
     `;
     
     card.addEventListener("click", function() {
@@ -61,4 +69,18 @@ function sliderInit() {
     const prev=document.getElementById("prev");
     next.addEventListener('click', handleScrollNext);
     prev.addEventListener('click', handleScrollPrev);
+}
+function formatDate(date) {
+  const eventDate = new Date(date);
+
+  const options = {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  };
+
+  const formattedDate = `${eventDate.getDate().toString().padStart(2, '0')}/${(eventDate.getMonth() + 1).toString().padStart(2, '0')}/${eventDate.getFullYear()}, ${eventDate.getHours().toString().padStart(2, '0')}:${eventDate.getMinutes().toString().padStart(2, '0')}`;
+  return formattedDate;
 }
