@@ -18,6 +18,8 @@ function loadEvents() {
       });
     })
     .catch((error) => console.error("Fejl ved indlæsning af events:", error));
+
+    sliderInit();
 }
 
 // Funktion til at oprette et kort for et event
@@ -42,3 +44,21 @@ function createEventCard(event) {
 
 // Kald denne funktion, når siden indlæses
 document.addEventListener("DOMContentLoaded", loadEvents);
+
+//Card slider
+function handleScrollNext () {
+  const cards = document.getElementById("eventsContainer");
+  cards.scrollLeft=cards.scrollLeft += window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+}
+
+function handleScrollPrev () {
+  const cards = document.getElementById("eventsContainer");
+  cards.scrollLeft=cards.scrollLeft -= window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+}
+
+function sliderInit() {
+    const next=document.getElementById("next");
+    const prev=document.getElementById("prev");
+    next.addEventListener('click', handleScrollNext);
+    prev.addEventListener('click', handleScrollPrev);
+}

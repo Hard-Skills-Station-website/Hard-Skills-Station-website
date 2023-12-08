@@ -5,10 +5,10 @@ function toggleDarkMode() {
     const main = document.querySelector(".main-header");
     
     if (body.classList.contains('dark-mode')) {
-        footer.style.background = "url('/footerheroReverse.png') no-repeat center";
+        footer.style.background = "url('/footerheroReverse.png')";
         main.style.background = "url('/mainheroReverse.png') no-repeat center";
     } else {
-        footer.style.background = "url('/footerhero.png') no-repeat center";
+        footer.style.background = "url('/footerhero.png')";
         main.style.background = "url('/mainhero.png') no-repeat center";
     }
   }
