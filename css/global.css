@@ -338,6 +338,7 @@ button:hover {
   flex-direction: row;
   gap: 1rem;
 }
+<<<<<<< Updated upstream
 .eventInfoContainer {
   display: flex;
   align-items: center;
@@ -349,3 +350,22 @@ button:hover {
 .eventInfoContainer > p {
   
 }
+=======
+
+#user-profile {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  /* Tilføj yderligere styling her efter behov */
+}
+
+#user-profile:hover .dropdown-menu {
+  display: block;
+}
+>>>>>>> Stashed changes
