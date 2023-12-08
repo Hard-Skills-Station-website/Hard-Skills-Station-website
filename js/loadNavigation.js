@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     };
   }
 
+
   function buildLoginForm() {
     // Create login form elements based on the provided design
     var formContainer = document.createElement("div");
@@ -278,8 +279,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     return emailRegex.test(email);
   }
 }
-
-<<<<<<< Updated upstream
+});
 // JavaScript code to create a modal based on the content
 
 // Function to build the modal
@@ -373,11 +373,4 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
     }
   };
 }
-
-
-
-document.getElementById("logout").addEventListener("click", function () {
-  localStorage.removeItem("userToken");
-  window.location.href = "index.html";
-});
 
