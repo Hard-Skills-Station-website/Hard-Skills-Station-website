@@ -341,6 +341,8 @@ async function signUpUser() {
 
 // Function to build the modal
 function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDescription) {
+
+  const formattedDate = formatDate(eventDate);
   
   var existingModal = document.getElementById("modal");
   if (existingModal) {
@@ -352,7 +354,8 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
   modal.setAttribute("class", "modal");
 
   var modalContent = document.createElement("div");
-  modalContent.setAttribute("class", "modal-content");
+  modalContent.classList.add("modal-content", "eventModal");
+
 
   var closeBtn = document.createElement("span");
   closeBtn.setAttribute("class", "close");
@@ -378,7 +381,7 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
   dateContainer.appendChild(locationIconElement);
 
   var eventDateElement = document.createElement("p");
-  eventDateElement.textContent = "Date: " + eventDate;
+  eventDateElement.textContent = formattedDate;
   dateContainer.appendChild(eventDateElement);
 
   var locationContainer = document.createElement("div");
@@ -390,7 +393,7 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
   locationContainer.appendChild(locationIconElement);
 
   var eventLocationElement = document.createElement("p");
-  eventLocationElement.textContent = "Location: " + eventLocation;
+  eventLocationElement.textContent = eventLocation;
   locationContainer.appendChild(eventLocationElement);
 
   var eventDescriptionElement = document.createElement("p");

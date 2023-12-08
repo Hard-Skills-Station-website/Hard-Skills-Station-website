@@ -138,7 +138,7 @@ h1 {
 .reasons {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 3rem 0 5rem 0;
   background-color: transparent;
 }
 
@@ -204,11 +204,9 @@ h1 {
   width:100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-top: 100px;
-  padding-left:60px;
-  padding-right: 50px;
+  padding: 1rem;
   scroll-behavior:smooth;
-  height: ;
+  height: 25rem;
 }
 
 #eventsContainer::-webkit-scrollbar {
@@ -233,11 +231,23 @@ h1 {
 }
 
 .event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   background-color: var(--bg);
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow);
   height: 18rem;
+  width: 15rem;
+}
+.event-card:hover {
+  transform: translate(0,0.2rem) scale(1.05);
+  cursor: pointer;
+}
+.eventModal {
+  min-width: 70vw;
 }
 
 /* Media Queries for responsive adjustments */
