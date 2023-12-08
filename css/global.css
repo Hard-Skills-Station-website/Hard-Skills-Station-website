@@ -333,19 +333,3 @@ button:hover {
 .support a:hover{
   transform: scale(1.1);
 }
-#controls {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-.eventInfoContainer {
-  display: flex;
-  align-items: center;
-}
-.eventInfoContainer > i {
-  margin-right: 1rem;
-  justify-self: center;
-}
-.eventInfoContainer > p {
-  
-}

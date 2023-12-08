@@ -152,11 +152,92 @@ h1 {
   text-align: center;
 }
 
+#controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.eventInfoContainer {
+  display: flex;
+  align-items: center;
+}
+.eventInfoContainer > i {
+  margin-right: 1rem;
+  justify-self: center;
+}
+/*Card slider*/
+.slider {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:28rem;
+  overflow:hidden;
+}
+/* .slider:after {
+  content: '';
+  left: 98px;
+  height: 30rem;
+  position: absolute;
+  width: 3rem;
+  z-index: 100;
+  background: linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--bg) 70%);
+  pointer-events: none;
+}
+
+.slider:before {
+  content:'';
+  right:98px;
+  height:30rem;
+  position:absolute;
+  width:3rem;
+  z-index:100;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--bg) 70%);
+  pointer-events:none;
+} */
+
+#eventsContainer {
+  display:flex;
+  gap: 3rem;
+  align-items:center;
+  justify-content:flex-start;
+  width:100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 100px;
+  padding-left:60px;
+  padding-right: 50px;
+  scroll-behavior:smooth;
+  height: ;
+}
+
+#eventsContainer::-webkit-scrollbar {
+   height:0px;
+}
+
+#eventsContainer:after {
+  content:'';
+  display:block;
+  min-width:20px;
+  height:100px;
+  position:relative;
+}
+.sliderBtn {
+  border: none;
+  background-color: transparent;
+}
+.sliderBtn:hover {
+  cursor: pointer;
+  box-shadow: none;
+  color: var(--text);
+}
+
 .event-card {
   background-color: var(--bg);
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 18rem;
 }
 
 /* Media Queries for responsive adjustments */
