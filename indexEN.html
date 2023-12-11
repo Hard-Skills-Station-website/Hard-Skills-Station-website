@@ -15,6 +15,7 @@
     <script src="/js/loadNavigation.js"></script>
     <script src="/js/loadFooter.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/events.js"></script>
     <script
       src="https://kit.fontawesome.com/684b5ecd70.js"
       crossorigin="anonymous"
@@ -28,7 +29,7 @@
           <span class="text-black">Boost Your</span>
           <span class="text-gradient">Professional Skills</span>
         </h1>
-        <p class="main-content" data-translate>
+        <p class="main-content">
           Together with <mark class="span-gradient1">Kolding's</mark> companies,
           we provide <mark class="span-gradient2">free</mark> upskilling
           opportunities for students and alumni. The topics range widely from
@@ -38,50 +39,46 @@
         </p>
         <!-- Call to action buttons -->
         <div class="cta-buttons">
-          <button data-translate class="cta-1 blue">Create Account</button>
-          <button data-translate class="cta-2">View Events</button>
+          <button class="cta-1 blue">Create Account</button>
+          <button class="cta-2">View Events</button>
         </div>
       </div>
       <div class="courseCointainer">
         <section class="reasons">
           <div class="reason">
             <i class="fa-solid fa-sack-dollar"></i>
-            <h2 data-translate>Save Money</h2>
-            <p data-translate>
+            <h2>Save Money</h2>
+            <p>
               All our events are completely free for Campus Kolding's students
               and alumni.
             </p>
           </div>
           <div class="reason">
             <i class="fa-solid fa-globe"></i>
-            <h2 data-translate>Expand Your Network</h2>
-            <p data-translate>
-              Meet professionals and friends to expand your network.
-            </p>
+            <h2>Expand Your Network</h2>
+            <p>Meet professionals and friends to expand your network.</p>
           </div>
           <div class="reason">
             <i class="fa-solid fa-lightbulb"></i>
-            <h2 data-translate>Learn Useful Skills</h2>
-            <p data-translate>
+            <h2>Learn Useful Skills</h2>
+            <p>
               Increase your employability and learn new exciting new skills.
             </p>
           </div>
         </section>
 
         <section class="events">
-          <h2 data-translate>Our Events</h2>
+          <h2>Our Events</h2>
           <!-- Event cards go here -->
-          <div class="event-card">
-            <img src="event-image.jpg" alt="Event image" />
-            <h3>Python 101</h3>
-            <p data-translate>
-              Learn the basics of Python in a 5-hour workshop with expert James
-              Jensen.
-            </p>
-            <p data-translate>Date: 12/12/2023</p>
-            <p data-translate>Location: Online</p>
+          <div class="slider">
+            <button id="prev" class="sliderBtn">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div id="eventsContainer"></div>
+            <button id="next" class="sliderBtn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
           </div>
-          <!-- Additional event cards would be similar -->
         </section>
       </div>
     </main>
