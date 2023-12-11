@@ -48,6 +48,10 @@ i {
   height: 2.3rem;
   justify-items: center;
 }
+.language-switch > img:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
 #switchToDanish {
   padding-bottom: 0.8rem;
 }
