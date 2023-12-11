@@ -23,6 +23,11 @@ body {
   box-sizing: border-box;
   background-color: var(--bg);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
