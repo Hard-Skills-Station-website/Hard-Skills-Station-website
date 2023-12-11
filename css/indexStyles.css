@@ -174,27 +174,6 @@ h1 {
   height:28rem;
   overflow:hidden;
 }
-/* .slider:after {
-  content: '';
-  left: 98px;
-  height: 30rem;
-  position: absolute;
-  width: 3rem;
-  z-index: 100;
-  background: linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--bg) 70%);
-  pointer-events: none;
-}
-
-.slider:before {
-  content:'';
-  right:98px;
-  height:30rem;
-  position:absolute;
-  width:3rem;
-  z-index:100;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--bg) 70%);
-  pointer-events:none;
-} */
 
 #eventsContainer {
   display:flex;

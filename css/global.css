@@ -46,12 +46,15 @@ i {
   top: 50vh;
   overflow: auto;
   background-color: var(--shadow);
+  opacity: 0.5;
+  z-index: 100;
   padding: 1rem 0 1rem 0;
   border-radius: 0 15px 15px 0;
 }
 .flag {
   height: 2.3rem;
   justify-items: center;
+  z-index: 9999999;
 }
 .flag:hover {
   transform: scale(1.04);
