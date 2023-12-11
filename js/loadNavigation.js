@@ -61,10 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", (event) => {
   var signUpBtn = document.querySelector("#signUp");
   var loginBtn = document.querySelector("#loginBtn");
+  var createAccountBtn = document.querySelector("#createAccountBtn");
 
   // Bind the modal to the Sign Up button
   signUpBtn.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent the default anchor action
+    buildModal("signup");
+  });
+
+  createAccountBtn.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default button action
     buildModal("signup");
   });
 
