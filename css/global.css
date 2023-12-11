@@ -257,19 +257,6 @@ input[type="password"] {
   font-size: 1rem;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 450px) {
-  .modal-content {
-    width: 95%;
-  }
-
-  .close {
-    font-size: 25px;
-    top: 0;
-    right: 10px;
-  }
-}
-
 i {
   font-size: 2rem;
 }
@@ -384,4 +371,311 @@ button:hover {
 
 #user-profile:hover .dropdown-menu {
   display: block;
+}
+/* styles.css */
+.main-header {
+  color: var(--bg);
+  text-align: center;
+  padding: 1rem 0.5rem;
+  background: url("/mainhero.png") no-repeat center; /* This would be the wavy background image */
+  background-size: cover;
+  min-height: 40vh;
+}
+#signUp {
+  color: var(--text);
+}
+h1 {
+  padding-top: 6rem;
+}
+
+.text-black {
+  display: block;
+  color: var(--text);
+  font-size: 6.5rem; /* Was 48px */
+  font-weight: 600;
+}
+
+.text-gradient {
+  font-size: 6.5rem; /* Was 48px */
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #0026ef,
+    #3dbc96,
+    #1753ec
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #1753ec,
+    #3dbc96,
+    #0026ef
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
+}
+
+.span-gradient1 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #2581ba,
+    #1458d2
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #1458d2,
+    #2581ba
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
+}
+
+.span-gradient2 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #349daf,
+    #33a3ab
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #33a3ab,
+    #349daf,
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
+}
+
+.span-gradient3 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #2a61ed,
+    #257ccc
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #257ccc,
+    #2a61ed
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
+}
+
+.span-gradient4 {
+  font-weight: 600;
+  background: -webkit-linear-gradient(
+    left,
+    #35aba6,
+    #3cba97
+  ); /* For Safari 5.1 to 6.0 */
+  background: linear-gradient(
+    to right,
+    #3cba97,
+    #35aba6
+  ); /* Standard syntax; adjust your colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* This makes the text take the color of the background */
+}
+
+.main-content {
+  max-width: 50rem; /* More flexible for smaller screens */
+  margin: 0 auto;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.cta-buttons button {
+  padding: 0.625rem;
+  margin: 5% 2.5rem; /* Adjusted for better responsiveness */
+  cursor: pointer;
+  border-radius: 0.5rem;
+  width: 11.5rem; /* Was 184px */
+  height: 3.1875rem; /* Was 51px */
+}
+
+.cta-1 {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+}
+.cta-2 {
+  background-color: transparent;
+  color: var(--text);
+  border: 2px solid var(--text);
+}
+.reasons {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0 5rem 0;
+  background-color: transparent;
+}
+
+.reason {
+  width: 20rem; /* Full width on smaller screens */
+  text-align: center;
+}
+
+.events {
+  padding: 20px;
+  text-align: center;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.eventInfoContainer {
+  display: flex;
+  align-items: center;
+}
+.eventInfoContainer > i {
+  margin-right: 1rem;
+  justify-self: center;
+}
+/*Card slider*/
+.slider {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:28rem;
+  overflow:hidden;
+}
+
+#eventsContainer {
+  display:flex;
+  gap: 3rem;
+  align-items:center;
+  justify-content:flex-start;
+  width:100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem;
+  scroll-behavior:smooth;
+  height: 25rem;
+}
+
+#eventsContainer::-webkit-scrollbar {
+   height:0px;
+}
+
+#eventsContainer:after {
+  content:'';
+  display:block;
+  min-width:20px;
+  height:100px;
+  position:relative;
+}
+.sliderBtn {
+  border: none;
+  background-color: transparent;
+}
+.sliderBtn:hover {
+  cursor: pointer;
+  box-shadow: none;
+  color: var(--text);
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px var(--shadow);
+  min-height: 18rem;
+  min-width: 20%;
+}
+.event-card:hover {
+  transform: translate(0,0.2rem) scale(1.05);
+  cursor: pointer;
+}
+.event-card > h3, .event-card > p{
+  text-align: left;
+}
+.eventModal {
+  min-width: 70vw;
+}
+/* Responsive adjustments */
+@media screen and (max-width: 450px) {
+  .modal-content {
+    width: 95%;
+  }
+
+  .close {
+    font-size: 25px;
+    top: 0;
+    right: 10px;
+  }
+  .text-black, .text-gradient {
+    font-size: 3.5rem;
+  }
+  .main-content {
+    font-size: 1.2rem;
+    width: 85%;
+    text-align: center;
+  }
+  .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .cta-1, .cta-2 {
+    width: 5rem;
+  }
+  .cta-2 {
+    margin: 0 !important;
+  }
+  .cta-buttons button {
+    margin: 0;
+    padding: 0;
+    width: 8rem;
+  }
+  .reasons {
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 1rem 1rem 1rem;
+  }
+  .reason {
+    margin-bottom: 1.5rem;
+  }
+  .language-switch {
+    top: 12vh;
+    width: 2.4rem;
+  }
+  .flag {
+    height: 1.6rem;
+  }
+  .event-card {
+    min-width: 70%;
+  }
+  footer {
+    padding: 0;
+  }
+  .modal-content {
+    width: 80%;
+  }
+  .header-logo {
+    height: 2.5rem;
+  }
+  .courseContainer {
+    padding: 0 0.6rem 0 0.6rem;
+  }
+  .checkbox-label {
+    width: 3.3rem;
+  }
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(1.9rem);
+  }
 }
