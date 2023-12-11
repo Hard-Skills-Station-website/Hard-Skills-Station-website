@@ -1,9 +1,18 @@
 // Definer API URL
 const apiUrl = "https://hardskillstation-api.azurewebsites.net";
 
+function languageChecker() {
+  let pageLangguage = document.documentElement.lang;
+  if (pageLangguage == "da") {
+    loadEvents("danish");
+  } else {
+    loadEvents("english");
+  }
+}
+
 // Funktion til at hente og vise events
-function loadEvents() {
-  fetch(`${apiUrl}/events/danish`)
+function loadEvents(lang) {
+  fetch(`${apiUrl}/events/${lang}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -57,7 +66,7 @@ function createEventCard(event) {
 }
 
 // Kald denne funktion, når siden indlæses
-document.addEventListener("DOMContentLoaded", loadEvents);
+document.addEventListener("DOMContentLoaded", languageChecker);
 
 //Card slider
 function handleScrollNext() {

@@ -19,7 +19,12 @@ body {
   box-sizing: border-box;
   background-color: var(--bg);
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text);
 }
 p {
@@ -35,20 +40,20 @@ i {
   padding: 0 3rem;
 }
 .language-switch {
-    width: 4rem;
-    position: fixed;
-    left: 0px;
-    top: 50vh;
-    overflow: auto;
-    background-color: var(--shadow);
-    padding: 1rem 0 1rem 0;
-    border-radius: 0 15px 15px 0;
+  width: 4rem;
+  position: fixed;
+  left: 0px;
+  top: 50vh;
+  overflow: auto;
+  background-color: var(--shadow);
+  padding: 1rem 0 1rem 0;
+  border-radius: 0 15px 15px 0;
 }
-.language-switch > img {
+.flag {
   height: 2.3rem;
   justify-items: center;
 }
-.language-switch > img:hover {
+.flag:hover {
   transform: scale(1.04);
   cursor: pointer;
 }
@@ -96,7 +101,6 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 15%;
-  
 }
 
 .contact-info {
@@ -112,7 +116,6 @@ footer {
 }
 #contactPerson {
   font-weight: 500;
-
 }
 #contactEmail {
   font-weight: 700;
@@ -140,7 +143,6 @@ footer {
 .footer-logo p {
   max-width: 6rem;
 }
-
 
 /* Styles for the modal background */
 .modal {
@@ -288,7 +290,6 @@ button:hover {
 /*Dark mode*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -316,7 +317,6 @@ button:hover {
 .fa-sun {
   color: #f39c12;
   font-size: 1.3rem;
-
 }
 
 .checkbox-label .ball {
@@ -335,9 +335,9 @@ button:hover {
 }
 
 .support {
-	position: absolute;
-	right: 20px;
-	bottom: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 .support a {
@@ -348,7 +348,7 @@ button:hover {
   transition: transform 0.2s ease;
 }
 
-.support a:hover{
+.support a:hover {
   transform: scale(1.1);
 }
 #controls {
@@ -366,9 +366,7 @@ button:hover {
   justify-self: center;
 }
 .eventInfoContainer > p {
-  
 }
-
 
 #user-profile {
   position: relative;
@@ -386,4 +384,3 @@ button:hover {
 #user-profile:hover .dropdown-menu {
   display: block;
 }
-

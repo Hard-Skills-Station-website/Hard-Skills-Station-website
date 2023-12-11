@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
 document.addEventListener("DOMContentLoaded", (event) => {
   var signUpBtn = document.querySelector("#signUp");
   var loginBtn = document.querySelector("#loginBtn");
