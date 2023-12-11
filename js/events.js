@@ -3,7 +3,7 @@ const apiUrl = "https://hardskillstation-api.azurewebsites.net";
 
 // Funktion til at hente og vise events
 function loadEvents() {
-  fetch(`${apiUrl}/event`)
+  fetch(`${apiUrl}/events/danish`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -19,7 +19,7 @@ function loadEvents() {
     })
     .catch((error) => console.error("Fejl ved indlæsning af events:", error));
 
-    sliderInit();
+  sliderInit();
 }
 
 // Funktion til at oprette et kort for et event
@@ -43,44 +43,63 @@ function createEventCard(event) {
         <p>${event.location}</p>
         </div>
     `;
-    
-    card.addEventListener("click", function() {
-        buildEventModal(event.image, event.headline, event.date, event.location, event.description);
-      });
-    return card;
+
+  card.addEventListener("click", function () {
+    buildEventModal(
+      event.image,
+      event.headline,
+      event.date,
+      event.location,
+      event.description
+    );
+  });
+  return card;
 }
 
 // Kald denne funktion, når siden indlæses
 document.addEventListener("DOMContentLoaded", loadEvents);
 
 //Card slider
-function handleScrollNext () {
+function handleScrollNext() {
   const cards = document.getElementById("eventsContainer");
-  cards.scrollLeft=cards.scrollLeft += window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+  cards.scrollLeft = cards.scrollLeft +=
+    window.innerWidth / 2 > 600
+      ? window.innerWidth / 2
+      : window.innerWidth - 100;
 }
 
-function handleScrollPrev () {
+function handleScrollPrev() {
   const cards = document.getElementById("eventsContainer");
-  cards.scrollLeft=cards.scrollLeft -= window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+  cards.scrollLeft = cards.scrollLeft -=
+    window.innerWidth / 2 > 600
+      ? window.innerWidth / 2
+      : window.innerWidth - 100;
 }
 
 function sliderInit() {
-    const next=document.getElementById("next");
-    const prev=document.getElementById("prev");
-    next.addEventListener('click', handleScrollNext);
-    prev.addEventListener('click', handleScrollPrev);
+  const next = document.getElementById("next");
+  const prev = document.getElementById("prev");
+  next.addEventListener("click", handleScrollNext);
+  prev.addEventListener("click", handleScrollPrev);
 }
 function formatDate(date) {
   const eventDate = new Date(date);
 
   const options = {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit'
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
   };
 
-  const formattedDate = `${eventDate.getDate().toString().padStart(2, '0')}/${(eventDate.getMonth() + 1).toString().padStart(2, '0')}/${eventDate.getFullYear()}, ${eventDate.getHours().toString().padStart(2, '0')}:${eventDate.getMinutes().toString().padStart(2, '0')}`;
+  const formattedDate = `${eventDate.getDate().toString().padStart(2, "0")}/${(
+    eventDate.getMonth() + 1
+  )
+    .toString()
+    .padStart(2, "0")}/${eventDate.getFullYear()}, ${eventDate
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${eventDate.getMinutes().toString().padStart(2, "0")}`;
   return formattedDate;
 }
