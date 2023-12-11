@@ -34,11 +34,22 @@ i {
 .courseContainer {
   padding: 0 3rem;
 }
-
+.language-switch {
+    width: 4rem;
+    position: fixed;
+    left: 0px;
+    top: 50vh;
+    overflow: auto;
+    background-color: var(--shadow);
+    padding: 1rem 0 1rem 0;
+    border-radius: 0 15px 15px 0;
+}
 .language-switch > img {
-  height: 3rem;
-  padding: 0 0.5rem;
+  height: 2.3rem;
   justify-items: center;
+}
+#switchToDanish {
+  padding-bottom: 0.8rem;
 }
 
 .signUp {
