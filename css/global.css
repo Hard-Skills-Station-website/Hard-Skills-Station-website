@@ -1,13 +1,17 @@
 :root {
   --accent: #0066ff;
   --bg: #ffffff;
+  --card: #fff;
   --text: #000;
-  --shadow: #dbdbdb;
+  --shadow: hsl(0, 0%, 86%);
+  --transparent: rgba(186, 186, 186, 0.5);
 }
 .dark-mode {
   --bg: hsl(0, 0%, 2%);
   --text: #fff;
   --shadow: #363636;
+  --transparent: rgba(78, 78, 78, 0.75);
+  --card: #181818;
 }
 * {
   transition: 0.3s ease-in-out;
@@ -43,18 +47,15 @@ i {
   width: 4rem;
   position: fixed;
   left: 0px;
-  top: 50vh;
+  top: 30vh;
   overflow: auto;
-  background-color: var(--shadow);
-  opacity: 0.5;
-  z-index: 100;
+  background-color: var(--transparent);
   padding: 1rem 0 1rem 0;
   border-radius: 0 15px 15px 0;
 }
 .flag {
   height: 2.3rem;
   justify-items: center;
-  z-index: 9999999;
 }
 .flag:hover {
   transform: scale(1.04);
@@ -368,9 +369,6 @@ button:hover {
   margin-right: 1rem;
   justify-self: center;
 }
-.eventInfoContainer > p {
-}
-
 #user-profile {
   position: relative;
   display: inline-block;

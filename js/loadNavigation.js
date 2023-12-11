@@ -287,7 +287,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 }
 });
-// JavaScript code to create a modal based on the content
 
 // Function to build the modal
 function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDescription) {
@@ -328,7 +327,8 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
   dateContainer.appendChild(locationIconElement);
 
   var eventDateElement = document.createElement("p");
-  eventDateElement.textContent = "Date: " + eventDate;
+  const formattedDate = formatDate(eventDate);
+  eventDateElement.textContent = formattedDate;
   dateContainer.appendChild(eventDateElement);
 
   var locationContainer = document.createElement("div");
@@ -340,7 +340,7 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
   locationContainer.appendChild(locationIconElement);
 
   var eventLocationElement = document.createElement("p");
-  eventLocationElement.textContent = "Location: " + eventLocation;
+  eventLocationElement.textContent = eventLocation;
   locationContainer.appendChild(eventLocationElement);
 
   var eventDescriptionElement = document.createElement("p");
@@ -353,20 +353,6 @@ function buildEventModal(eventImg, eventName, eventDate, eventLocation, eventDes
   signUpButton.setAttribute("class", "cta-1 modalButton modalcta-1");
   signUpButton.textContent = "Tilmeld Dig";
   eventDetails.appendChild(signUpButton);
-  
-   // Button for 'Se Alle Events' (See All Events)
-  var seeAllEventsButton = document.createElement("button");
-  seeAllEventsButton.setAttribute("data-translate", "");
-  seeAllEventsButton.setAttribute("class", "cta-2 modalButton modalcta-2");
-  seeAllEventsButton.textContent = "Se Alle Events";
-  seeAllEventsButton.addEventListener("click", function() {
-    modal.style.display = "none";
-    var eventsContainer = document.getElementById("eventsContainer");
-    if (eventsContainer) {
-      eventsContainer.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-  eventDetails.appendChild(seeAllEventsButton);
 
   modalContent.appendChild(eventDetails);
   modal.appendChild(modalContent);

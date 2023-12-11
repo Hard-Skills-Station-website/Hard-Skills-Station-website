@@ -213,17 +213,20 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--bg);
+  background-color: var(--card);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px var(--shadow);
-  height: 18rem;
-  width: 15rem;
+  box-shadow: 2px 5px 10px var(--shadow);
+  min-height: 18rem;
+  min-width: 20%;
 }
 .event-card:hover {
   transform: translate(0,0.2rem) scale(1.05);
   cursor: pointer;
+}
+.event-card > h3, .event-card > p{
+  text-align: left;
 }
 .eventModal {
   min-width: 70vw;
